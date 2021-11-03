@@ -6,7 +6,7 @@ order: 11 # Lecture number for 2021
 
 # CS 131 Lecture Notes
 ### October 26, 2021
-#### Valexa Orelien, Alexis Lowber, Jacob Castaneda, Colin Norick, Adonis Pugh, Jason Chen
+#### Valexa Orelien, Alexis Lowber, Jacob Castaneda, Adonis Pugh, Jason Chen
 
 # Multi-view Geometry
 
