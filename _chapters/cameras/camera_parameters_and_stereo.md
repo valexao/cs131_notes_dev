@@ -18,8 +18,7 @@ When there are *known* cameras that output images with estimated 2D corresponden
 
 We can see this through a model below, where we know that the camera intrisic and extrinsic $R$ and $t$ are the rotation and translation of each camera relative to each other.
 
-![](https://i.imgur.com/hRCSAkc.png | width = 50%)
-
+![](https://i.imgur.com/hRCSAkc.png)
 
 Recall the definition of ***motion*** as estimating the $R$ and $t$ parameters for a set of cameras given 2D correspondences to find where they are in the world.
 
@@ -48,12 +47,12 @@ We can formalize the geometric approach using linear algebra:
 
 First, we know that the optical center ($O$), the 2D point on the image plane ($x$), and the real 3D point($X$) lie on the same ray. They are therefore colinear. So, we can relate these values using a projection matrix $P$ and a constant $\lambda$ to account for scale):
 
-
+$$
 \begin{equation}
     \lambda x = PX \\
     \lambda ' x' = P'X\\
 \end{equation}
-
+$$
 
 Since $x$ and $PX$ (and $x'$ and $P'X$ are colinear, so their cross product is 0):
 
