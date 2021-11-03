@@ -84,19 +84,19 @@ This is a total least squares problem which can be solved using singular value d
 
 Now that we’ve discussed the linear/algebraic approach to triangulation, we can consider the nonlinear approach. With this approach, we begin by finding our projected estimate of the 3D point using our two rays. Then, our goal becomes finding the $X$ that minimizes the 2D reprojection errors:
 
-<img src="https://i.imgur.com/m1iVl0N.png" width="50%" height="30%" />
+<img src="https://i.imgur.com/hzjnXiE.png" width="50%" height="30%" />
 
 (Note that mathematical techniques used for this model are very similar to the ones used to solve our linear model.)
 
 ### [1] Cross-Product Review
 #### Geometric representation of cross product:
 
-![](https://upload.wikimedia.org/wikipedia/commons/4/4e/Cross_product_parallelogram.svg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Cross_product_parallelogram.svg" width="50%" height="30%" />
 
 As a refresher, the cross product of vectors $a$ and $b$ can be represented by the area of the parallelogram formed by $a$ and $b$. So for collinear vectors, this area is 0.
 
 #### Matrix representation of cross product:
-![reference link](https://wikimedia.org/api/rest_v1/media/math/render/png/51136b4d7561e04a62ccec43b72e5162f9341633)
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/png/51136b4d7561e04a62ccec43b72e5162f9341633" width="50%" height="30%" />
 
 This multiplication results in:
 
@@ -148,13 +148,13 @@ Epipolar geometry involves the geometry between the three-dimensional scene poin
 
 **Epipolar Lines.** The epipolar lines are the intersections of the epipolar plane, defined above, with the two image planes corresponding to the two cameras. The epipolar lines intersect the plane at the respective epipoles of the two cameras. 
 
-![](https://i.imgur.com/SIl2e7R.png)
+<img src="https://i.imgur.com/SIl2e7R.png" width="50%" height="30%" />
 
 #### Example Configurations
 *Motion Parallel to an Image Plane*
 If we consider the diagram below, we see what happens when the two image planes are parallel to one another. For example, this occurs if you are taking a picture of an object and move directly parallel horizontally and take another picture. This causes the two images to share the same plane. As a result, the epipoles designated by e and e’ are located at the point infinity. This is because the baseline that joins the two camera points is parallel to the axis of the two image planes. Tangentially, the two epipolar lines are also parallel to the axis of the two image planes and are horizontal. 
 
-![](https://i.imgur.com/ICO2BDS.png)
+<img src="https://i.imgur.com/ICO2BDS.png" width="50%" height="30%" />
 
 *Example Configuration: Motion Perpendicular to an Image Plane*
 Motion perpendicular to an image plane occurs when you take a picture, take a step forward, and take another picture, which is common in cases such as self-driving cars. Thus the baseline is perpendicular to the image plane. By construction, the epipoles are the focus of expansion and move outwards, moving away from the principle point which they coincide with.
@@ -164,7 +164,7 @@ Motion perpendicular to an image plane occurs when you take a picture, take a st
 Let’s consider the possibility that you are concerned with finding the corresponding point on the right image of a point on the left image. If you consider two images below and a single point on the left image xₗ, you will see that the potential matches must lie on a epipolar line formed on the right image. This is because the epipolar plane formed by the points of the two cameras and the already-realized point on the left image intersects with the image on the right at a single line. The search for correspondence is thus concentrated on a single epipolar line rather than the entire right-hand image. 
 	Consider two rays projected from the point of the camera onto the two points located on matching epipolar lines. You will see that they may intersect in the same three dimensional space, meaning that they both could be projections of the same three dimensional point X. However, you must still be aware that even if both points satisfy the epipolar constraint of the other, they may not be projections of the same three-dimensional point in the image. 
 
-![](https://i.imgur.com/Zhm4cWA.png)
+<img src="https://i.imgur.com/Zhm4cWA.png" width="50%" height="30%" />
 
 ### Math for epipolar constant: Calibrated Case
 
@@ -237,7 +237,7 @@ $$
 
 We define the essential matrix to be $E = [t]_{\times}R$. **We use the essential matrix to relate corresponding points in stereo images.**
 
-![](https://i.imgur.com/mTPRIJZ.png)
+<img src="https://i.imgur.com/mTPRIJZ.png" width="50%" height="30%" />
 
 We can now transform our intuitive geometric reasoning about epipolar lines into more rigorous algebraic reasoning. Recall that a line can be expressed as $ax + by + c = 0$ or $l^T\mathbf{x}=0$ where $l=(a,b,c)^T$ and $\mathbf{x}=(x,y,1)^T$ in homogenous coordinates. Furthermore, recall the the essential matrix equation $x'^TEx=0$. If $l'=Ex$ we have $x'^Tl'=0$, meaning $x'$ must lie on $l'$. This means $Ex$ is the epipolar line associated $x$. The analogous case, $E^Tx'$ being the epipolar line associated with $x'$, is true as well due to the symmetry of the images.
 
@@ -261,7 +261,8 @@ In summary, the essential matrix $E$ has the following properties:
 - Resolving the fundamental matrix from this constrain enables us to find the essential matrix and thus the Rotation and Translation matrices
 
 **The math...**
-![](https://i.imgur.com/MbW7MVM.png)
+
+<img src="https://i.imgur.com/MbW7MVM.png" width="50%" height="30%" />
 
 * We don't know the camera calibration matrices $K$ & $K'$
 * Rewrite constraints in terms of *unknown normalized coordinates*
