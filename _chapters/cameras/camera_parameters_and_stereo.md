@@ -51,10 +51,10 @@ We can formalize the geometric approach using linear algebra:
 First, we know that the optical center ($O$), the 2D point on the image plane ($x$), and the real 3D point($X$) lie on the same ray. They are therefore colinear. So, we can relate these values using a projection matrix $P$ and a constant $\lambda$ to account for scale):
 
 
-\begin{equation}
+`\begin{equation}
     \lambda x = PX \\
     \lambda ' x' = P'X\\
-\end{equation}
+\end{equation}`
 
 
 Since $x$ and $PX$ (and $x'$ and $P'X$ are colinear, their cross product is 0:
