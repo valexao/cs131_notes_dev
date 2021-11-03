@@ -56,12 +56,12 @@ $$
 Since $x$ and $PX$ (and $x'$ and $P'X$ are colinear, so their cross product is 0):
 
 $$
-\begin{aligned}
+\begin{equation}
     &x \times PX = 0 \\
     &x' \times P'X = 0 \\
     &[x]_{\times} PX = 0 \\
     &[x']_{\times} P'X = 0 
-\end{aligned}
+\end{equation}
 $$
 
 (See [1] for a quick refresher on cross products)
@@ -99,35 +99,42 @@ As a refresher, the cross product of vectors $a$ and $b$ can be represented by t
 
 This multiplication results in:
 
+$$
 \begin{align}
     (a \times b)_1 = 0*b_1 - a_3*b_2 + a_2*b_3 = - a_3*b_2 + a_2*b_3 \\
     (a \times b)_2 = a_3*b_1 + 0*b_2 - a_1*b_3 = a_3*b_1 - a_1*b_3 \\
     (a \times b)_3 = -a_2*b_1 + a_1*b_2 + 0*b_3 = -a_2*b_1 + a_1*b_2
 \end{align}
+$$
 
 Now, since $a$ and $b$ are collinear, we know:
 
+$$
 \begin{align}
     \frac{a_1}{b_1} = \frac{a_2}{b_2} = \frac{a_3}{b_3}
 \end{align}
+$$
 
 By cross multiplying the ratios, we get:
 
+$$
 \begin{align}
     a_3*b_2 = a_2*b_3 \\
     a_3*b_1 = a_1*b_3 \\
     a_2*b_1 = a_1*b_2 \\
 \end{align}
+$$
 
 Therefore, 
 
+$$
 \begin{align}
 a \times b = 
 \begin{bmatrix}
 0 & 0 & 0
 \end{bmatrix}
 \end{align}
-
+$$
 
 ## Epipolar Geometry
 
@@ -161,12 +168,14 @@ Let’s consider the possibility that you are concerned with finding the corresp
 ### Math for epipolar constant: Calibrated Case
 
 For the calibrated case, we can make the assumption that the intrinsic and extrinsic parameters are known for both of the cameras, and by convention, the world is centered at the first camera. Thus the projection matrices for the first camera is equal to P below, where the extrinsic matrix is K, which is intrinsic to the camera itself, and since there is no rotation from the center, the rotation matrix is the identity, and the translation matrix is zero, since there is no translation occuring at the origin. However, for the projection matrices for the second camera, indicated by P', the coordinate relies an extrinsic K' and a rotation matrices R and a translation t from the first camera.
+
 \begin{align}
     P = K[I|0] \\
     P' = K'[R|t]
 \end{align}
 
 We can then normalize the projection matrices by pre-multiplying them by the inverse calibration matrices. The ray from O, the camera, to the point x is given by the inverse of the extrinsic matrix of the first camera multiplied by the world coordinate X we are examining, and the same is true for O', where the point x' is given by the inverse of the extrinsic matrix of the other camera multiplied by X.
+
 \begin{align}
     x_{norm} = K^{-1}x_{pixel} \approx [I|0]X \\
     x_{norm} = K'^{-1}x'_{pixel} \approx [R|t]X
@@ -180,11 +189,11 @@ We see that the world coordinate X is equivalent to the transpose of (x, 1). The
 \end{align}
 
 
-
 \begin{align}
     x' \cdot [t \times (Rx)] = 0 \\ 
     x'^T[t]_{\times} Rx = 0
 \end{align}
+
 
 \begin{equation}
 a \times b = 
@@ -203,6 +212,7 @@ a \times b =
 
 As we know, the dot product of two vectors $a$ and $b$ is equivalent to $a$ transpose $b$, so therefore we can simplify the expression to the following:
 
+$$
 \begin{align}
     x' \cdot [t \times (Rx)] = 0 \\ 
     x'^T[t]_{\times} Rx = 0 \\
@@ -220,6 +230,7 @@ As we know, the dot product of two vectors $a$ and $b$ is equivalent to $a$ tran
     \end{pmatrix}
     = 0
 \end{align}
+$$
 
 ### The Essential Matrix
 
