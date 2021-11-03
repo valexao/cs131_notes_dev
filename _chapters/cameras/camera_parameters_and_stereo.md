@@ -30,8 +30,7 @@ We have a problem where we are given projections of 3D points in two or more ima
 
 Let’s say we have two images, where we know the 3D points $x$ and $x'$. Let $X$ represent the coordinates of the point that we are trying to find, and we can use this model to visually represent how we are trying to find $X$.
 
-<img src="https://i.imgur.com/KPlfgTv.png" width="150" height="100">
-![Model with two cameras](https://i.imgur.com/KPlfgTv.png)
+<img src="https://i.imgur.com/KPlfgTv.png" width="50%" height="30%">
 
 Recall that we are using the pinhole camera model, so we are using a camera sensor, which is a ray that represents going from the camera center ($O$ for the first camera and $O'$ for the second camera in this case) to the pixel. This ray is like a linear projection that allows us to project from 2 dimensional to 3 dimensional points using a pinhole camera projection matrix, also known as a $P$ matrix. This will tell us that there is the 3D point $X$ somewhere along that line at an unknown depth. We would apply this to both cameras in this case - if there are more 2 cameras then the camera sensor should be calculated for each camera - and trace that ray for the camera, which again tells us the direction of the 3D point $X$ at an unknown depth. 
 
