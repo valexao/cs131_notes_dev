@@ -18,7 +18,7 @@ When there are *known* cameras that output images with estimated 2D corresponden
 
 We can see this through a model below, where we know that the camera intrisic and extrinsic $R$ and $t$ are the rotation and translation of each camera relative to each other.
 
-![](https://i.imgur.com/hRCSAkc.png)
+![](https://i.imgur.com/hRCSAkc.png | width=100)
 
 
 Recall the definition of ***motion*** as estimating the $R$ and $t$ parameters for a set of cameras given 2D correspondences to find where they are in the world.
@@ -33,7 +33,6 @@ Let’s say we have two images, where we know the 3D points $x$ and $x'$. Let $X
 
 ![Model with two cameras](https://i.imgur.com/KPlfgTv.png)
 
-
 Recall that we are using the pinhole camera model, so we are using a camera sensor, which is a ray that represents going from the camera center ($O$ for the first camera and $O'$ for the second camera in this case) to the pixel. This ray is like a linear projection that allows us to project from 2 dimensional to 3 dimensional points using a pinhole camera projection matrix, also known as a $P$ matrix. This will tell us that there is the 3D point $X$ somewhere along that line at an unknown depth. We would apply this to both cameras in this case - if there are more 2 cameras then the camera sensor should be calculated for each camera - and trace that ray for the camera, which again tells us the direction of the 3D point $X$ at an unknown depth. 
 
 The next step might be to ask, where do these rays intersect? If we know that they correspond to the same three points, then we can infer that they should intersect at a 3D point. That actually is the definition of ***triangulation*** - that when are given two or more points that correspond to each other, the rays should intersect at a 3D point. 
@@ -45,19 +44,18 @@ One way to resolve this and “create” idealized conditions is by approximatin
 As aforementioned, there is a major flaw with the geometric approach to triangulation:
 Uncertainty, or noise, varies with distance. That is to say, an estimation for a point that is farther from the image planes is more likely to be inaccurate. In statistics, this condition is known as ***heteroscedasticity***.
 
-
 We can formalize the geometric approach using linear algebra:
 
 First, we know that the optical center ($O$), the 2D point on the image plane ($x$), and the real 3D point($X$) lie on the same ray. They are therefore colinear. So, we can relate these values using a projection matrix $P$ and a constant $\lambda$ to account for scale):
 
 
-\begin{equation*}
+\begin{equation}
     \lambda x = PX \\
     \lambda ' x' = P'X\\
-\end{equation*}
+\end{equation}
 
 
-Since $x$ and $PX$ (and $x'$ and $P'X$ are colinear, their cross product is 0:
+Since $x$ and $PX$ (and $x'$ and $P'X$ are colinear, so their cross product is 0):
 
 \begin{equation}
     x \times PX = 0 \\
@@ -108,11 +106,13 @@ This multiplication results in:
 \end{align}
 
 Now, since $a$ and $b$ are collinear, we know:
+
 \begin{align}
     \frac{a_1}{b_1} = \frac{a_2}{b_2} = \frac{a_3}{b_3}
 \end{align}
 
 By cross multiplying the ratios, we get:
+
 \begin{align}
     a_3*b_2 = a_2*b_3 \\
     a_3*b_1 = a_1*b_3 \\
@@ -120,6 +120,7 @@ By cross multiplying the ratios, we get:
 \end{align}
 
 Therefore, 
+
 \begin{align}
 a \times b = 
 \begin{bmatrix}
@@ -201,6 +202,7 @@ a \times b =
 \end{equation}
 
 As we know, the dot product of two vectors $a$ and $b$ is equivalent to $a$ transpose $b$, so therefore we can simplify the expression to the following:
+
 \begin{align}
     x' \cdot [t \times (Rx)] = 0 \\ 
     x'^T[t]_{\times} Rx = 0 \\
