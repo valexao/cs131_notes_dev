@@ -18,7 +18,7 @@ When there are *known* cameras that output images with estimated 2D corresponden
 
 We can see this through a model below, where we know that the camera intrisic and extrinsic $R$ and $t$ are the rotation and translation of each camera relative to each other.
 
-![](https://i.imgur.com/hRCSAkc.png | width=100)
+![](https://i.imgur.com/hRCSAkc.png | width = 50%)
 
 
 Recall the definition of ***motion*** as estimating the $R$ and $t$ parameters for a set of cameras given 2D correspondences to find where they are in the world.
