@@ -1,6 +1,6 @@
 ---
-title: Camera parameters and stereo
-keywords: (insert comma-separated keywords here)
+title: Camera Parameters
+keywords: camera parameters, triangulation, multi-view geometry, epipolar geometry
 order: 11 # Lecture number for 2021
 ---
 
