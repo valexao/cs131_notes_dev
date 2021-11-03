@@ -18,7 +18,7 @@ When there are *known* cameras that output images with estimated 2D corresponden
 
 We can see this through a model below, where we know that the camera intrisic and extrinsic $R$ and $t$ are the rotation and translation of each camera relative to each other.
 
-![](https://i.imgur.com/hRCSAkc.png)
+<img src="https://i.imgur.com/hRCSAkc.png" width="50%" height="30%"/>
 
 Recall the definition of ***motion*** as estimating the $R$ and $t$ parameters for a set of cameras given 2D correspondences to find where they are in the world.
 
@@ -30,7 +30,7 @@ We have a problem where we are given projections of 3D points in two or more ima
 
 Let’s say we have two images, where we know the 3D points $x$ and $x'$. Let $X$ represent the coordinates of the point that we are trying to find, and we can use this model to visually represent how we are trying to find $X$.
 
-<img src="https://i.imgur.com/KPlfgTv.png" width="50%" height="30%">
+<img src="https://i.imgur.com/KPlfgTv.png" width="50%" height="30%"/>
 
 Recall that we are using the pinhole camera model, so we are using a camera sensor, which is a ray that represents going from the camera center ($O$ for the first camera and $O'$ for the second camera in this case) to the pixel. This ray is like a linear projection that allows us to project from 2 dimensional to 3 dimensional points using a pinhole camera projection matrix, also known as a $P$ matrix. This will tell us that there is the 3D point $X$ somewhere along that line at an unknown depth. We would apply this to both cameras in this case - if there are more 2 cameras then the camera sensor should be calculated for each camera - and trace that ray for the camera, which again tells us the direction of the 3D point $X$ at an unknown depth. 
 
@@ -69,12 +69,12 @@ $$
 
 Since $x = x_1 + x_2 + x_3$ is a 3x1 vector, we have three equations. However, simplifiication of the system gives us only two independent equations for $x$ (and two for $x'$). We can write this in matrix form:
 
-![](https://i.imgur.com/dRhcyh0.png)
-
+<img src="https://i.imgur.com/dRhcyh0.png" width="50%" height="30%" />
 
 We want to find a solution for this matrix, but we need to recognize that the solution will not be perfect due to noise. So, instead of setting the error 0, we will instead use a min function which allows us to get the error (the norm of $AX^2$) as close to zero as possible under the constraint that the norm of $X$ is equal to 1:
 
-![](https://i.imgur.com/m1iVl0N.png)
+
+<img src="https://i.imgur.com/m1iVl0N.png" width="50%" height="30%" />
 
 
 This is a total least squares problem which can be solved using singular value decomposition.
@@ -84,7 +84,7 @@ This is a total least squares problem which can be solved using singular value d
 
 Now that we’ve discussed the linear/algebraic approach to triangulation, we can consider the nonlinear approach. With this approach, we begin by finding our projected estimate of the 3D point using our two rays. Then, our goal becomes finding the $X$ that minimizes the 2D reprojection errors:
 
-![](https://i.imgur.com/hzjnXiE.png)
+<img src="https://i.imgur.com/m1iVl0N.png" width="50%" height="30%" />
 
 (Note that mathematical techniques used for this model are very similar to the ones used to solve our linear model.)
 
