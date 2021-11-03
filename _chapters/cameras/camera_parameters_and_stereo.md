@@ -289,7 +289,7 @@ where we get $F$ (*the fundamental matrix*) discovered by Olivier Faugeras and R
 \begin{equation}
 F=K'^{-T}EK^{-1}
 \end{equation}
-![](https://i.imgur.com/MeFqXD7.png)
+<img src="https://i.imgur.com/MeFqXD7.png" width="50%" height="30%" />
 
 
 * The fundamental matrix $F$ is a 3x3 matrix (note: everything is in homogenous coordinates) so **the fundamental matrix relates 2D homogenous coordinates in stereo images** where
@@ -313,7 +313,7 @@ and can be expanded to the following representation:
     \end{pmatrix}
     = 0
 \end{align}
-![](https://i.imgur.com/mTPRIJZ.png)
+<img src="https://i.imgur.com/mTPRIJZ.png" width="50%" height="30%" />
 
 The fundamental matrix has the following properties:
 
