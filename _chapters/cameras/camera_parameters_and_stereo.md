@@ -289,6 +289,7 @@ where we get $F$ (*the fundamental matrix*) discovered by Olivier Faugeras and R
 \begin{equation}
 F=K'^{-T}EK^{-1}
 \end{equation}
+
 <img src="https://i.imgur.com/MeFqXD7.png" width="50%" height="30%" />
 
 
@@ -313,6 +314,7 @@ and can be expanded to the following representation:
     \end{pmatrix}
     = 0
 \end{align}
+
 <img src="https://i.imgur.com/mTPRIJZ.png" width="50%" height="30%" />
 
 The fundamental matrix has the following properties:
